@@ -66,7 +66,7 @@ To evaluate the resource consumption, we implement a real-world prototype with s
 
 ## Acknowledgements
 
-This repo is based on **official implementation** of **Heterogeneous-Agent Reinforcement Learning** at [HARL](https://github.com/PKU-MARL/HARL), serving as core HARL aglorithms as well as baselines. Secondly, we use compression library at [CompressAI](https://github.com/InterDigitalInc/CompressAI). Finally, we inspire our IAD and RAD approaches relies on source [CDS](https://github.com/lich14/CDS). 
+This repo is based on **official implementation** of **Heterogeneous-Agent Reinforcement Learning** at [HARL](https://github.com/PKU-MARL/HARL), serving as core HARL aglorithms as well as baselines. Secondly, we use **Compression Library** at [CompressAI](https://github.com/InterDigitalInc/CompressAI). Finally, we inspire our IAD and RAD approaches relies on source code [CDS](https://github.com/lich14/CDS). 
 
 
 Thanks to the original authors for their work!
