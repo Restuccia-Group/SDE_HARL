@@ -24,7 +24,7 @@ pip install -e .
 
 ### Install Environments
 
-We implement SDE-HARL on [SMAC](https://github.com/oxwhirl/smac), [SMACv2](https://github.com/oxwhirl/smacv2), and, [Google Research Football](https://github.com/google-research/football). However, you can install [MAMuJoCo](https://github.com/schroederdewitt/multiagent_mujoco), [MPE](https://pettingzoo.farama.org/environments/mpe/), [Bi-DexterousHands](https://github.com/PKU-MARL/DexterousHands), and [Light Aircraft Game](https://github.com/liuqh16/CloseAirCombat) to research purposes. 
+We implement SDE-HARL on [SMAC](https://github.com/oxwhirl/smac), [SMACv2](https://github.com/oxwhirl/smacv2), and, [Google Research Football](https://github.com/google-research/football). However, you can install [MAMuJoCo](https://github.com/schroederdewitt/multiagent_mujoco), [MPE](https://pettingzoo.farama.org/environments/mpe/), [Bi-DexterousHands](https://github.com/PKU-MARL/DexterousHands), and [Light Aircraft Game](https://github.com/liuqh16/CloseAirCombat) to your research purposes. 
 
 **Install Google Research Football**
 
@@ -40,9 +40,8 @@ Please follow [the official instructions](https://github.com/oxwhirl/smacv2) to 
 
 ## How to Run
 
-## Usage
 
-### Training on Existing Environments
+### Training 
 
 To train an algorithm on a provided environment, users can modify yaml configuration files of the corresponding algorithm and environment under `harl/configs/algos_cfgs` and `harl/configs/envs_cfgs` as they wish, go to `examples` folder, and then start training with a one-liner `python train.py --algo <ALGO> --env <ENV> --exp_name <EXPERIMENT NAME>` or `python train.py --load_config <CONFIG FILE PATH> --exp_name <EXPERIMENT NAME>`, where the latter is mostly used when reproducing an experiment. We provide the **tuned configurations** for algorithms in each environments under `tuned_configs` folder. Users can **reproduce our results** by using `python train.py --load_config <TUNED CONFIG PATH> --exp_name <EXPERIMENT NAME>` and change `<TUNED CONFIG PATH>` to the absolute path of the tuned config file on their machine.
 
@@ -57,7 +56,7 @@ python train.py --algo happo --env smac --exp_name test --seed $seed
 
 ```
 
-## Prototype
+## Real-world Prototype
 
 To evaluate the resource consumption, we implement a real-world prototype with some Raspberry Pi/Jetson Nano serve as low-power devices, and a super workstation as the server.
 
