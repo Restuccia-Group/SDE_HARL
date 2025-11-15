@@ -1,11 +1,11 @@
 # SDE-HARL
 This repo is the official implementation for SDE-HARL: Scalable Distributed Policy Execution for Heterogeneous-Agent Reinforcement Learning (AAAI 2026). This repository allows researchers and practitioners to easily reproduce our results on seven challenging benchmarks or apply SDE-HARL algorithms to their intended applications.
 
-## Architecture
+## Edge-Serve Architecture
 
 ![image](assets/SDE-HARL-ovr_page-0001.jpg)
 
-## Framework
+## SDE-HARL Framework
 
 ![image](assets/Framework_page-0001.jpg)
 
