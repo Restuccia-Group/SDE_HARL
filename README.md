@@ -18,7 +18,7 @@ conda create -n sde-harl python=3.8
 conda activate sde-harl
 # Install pytorch>=1.9.0 (CUDA>=11.0) manually
 git clone https://github.com/Restuccia-Group/SDE_HARL.git
-cd HARL
+cd SDE-HARL
 pip install -e .
 ```
 
