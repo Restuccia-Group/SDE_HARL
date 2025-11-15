@@ -3,7 +3,7 @@ This repo is the official implementation for SDE-HARL: Scalable Distributed Poli
 
 ## Architecture
 
-![image](assets/SDE-HARL-ovr_page-0001.jpg.jpg)
+![image](assets/SDE-HARL-ovr_page-0001.jpg)
 
 ## Framework
 
