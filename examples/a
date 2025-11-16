@@ -1,0 +1,82 @@
+Help on OnPolicyMARunner in module harl.runners.on_policy_ma_runner object:
+
+class OOnnPPoolliiccyyMMAARRuunnnneerr(harl.runners.on_policy_base_runner.OnPolicyBaseRunner)
+ |  OnPolicyMARunner(args, algo_args, env_args)
+ |  
+ |  Runner for on-policy MA algorithms.
+ |  
+ |  Method resolution order:
+ |      OnPolicyMARunner
+ |      harl.runners.on_policy_base_runner.OnPolicyBaseRunner
+ |      builtins.object
+ |  
+ |  Methods defined here:
+ |  
+ |  ttrraaiinn(self)
+ |      Training procedure for MAPPO.
+ |  
+ |  ----------------------------------------------------------------------
+ |  Methods inherited from harl.runners.on_policy_base_runner.OnPolicyBaseRunner:
+ |  
+ |  ____iinniitt____(self, args, algo_args, env_args)
+ |      Initialize the OnPolicyBaseRunner class.
+ |      Args:
+ |          args: command-line arguments parsed by argparse. Three keys: algo, env, exp_name.
+ |          algo_args: arguments related to algo, loaded from config file and updated with unparsed command-line arguments.
+ |          env_args: arguments related to env, loaded from config file and updated with unparsed command-line arguments.
+ |  
+ |  aafftteerr__uuppddaattee(self)
+ |      Do the necessary data operations after an update.
+ |      After an update, copy the data at the last step to the first position of the buffer.
+ |      This will be used for then generating new actions.
+ |  
+ |  cclloossee(self)
+ |      Close environment, writter, and logger.
+ |  
+ |  ccoolllleecctt(self, step)
+ |      Collect actions and values from actors and critics.
+ |      Args:
+ |          step: step in the episode.
+ |      Returns:
+ |          values, actions, action_log_probs, rnn_states, rnn_states_critic
+ |  
+ |  ccoommppuuttee(self)
+ |      Compute returns and advantages.
+ |      Compute critic evaluation of the last state,
+ |      and then let buffer compute returns, which will be used during training.
+ |  
+ |  eevvaall(self)
+ |      Evaluate the model.
+ |  
+ |  iinnsseerrtt(self, data)
+ |      Insert data into buffer.
+ |  
+ |  pprreepp__rroolllloouutt(self)
+ |      Prepare for rollout.
+ |  
+ |  pprreepp__ttrraaiinniinngg(self)
+ |      Prepare for training.
+ |  
+ |  rreennddeerr(self)
+ |      Render the model.
+ |  
+ |  rreessttoorree(self)
+ |      Restore model parameters.
+ |  
+ |  rruunn(self)
+ |      Run the training (or rendering) pipeline.
+ |  
+ |  ssaavvee(self)
+ |      Save model parameters.
+ |  
+ |  wwaarrmmuupp(self)
+ |      Warm up the replay buffer.
+ |  
+ |  ----------------------------------------------------------------------
+ |  Data descriptors inherited from harl.runners.on_policy_base_runner.OnPolicyBaseRunner:
+ |  
+ |  ____ddiicctt____
+ |      dictionary for instance variables (if defined)
+ |  
+ |  ____wweeaakkrreeff____
+ |      list of weak references to the object (if defined)
