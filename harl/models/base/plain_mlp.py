@@ -28,22 +28,22 @@ class PlainMLP(nn.Module):
     
 
     def forward(self, x):
-        x = self.mlp(x)#.unsqueeze(0)
+        x = self.mlp(x).unsqueeze(0)
         
         
-        # if self.training:
-        #     out = self.codec(x) 
-        #     bpp_loss = self.loss(out, x)["bpp_loss"] 
+        if self.training:
+            out = self.codec(x) 
+            bpp_loss = self.loss(out, x)["bpp_loss"] 
                 
-        #     aux_loss = self.EB.loss()
-        #     fea = self.round(x).squeeze(0)
+            aux_loss = self.EB.loss()
+            fea = self.round(x).squeeze(0)
     
-        # else:
-        #     self.EB.update(force=True)
-        #     bit = self.codec.compress(x.permute(1, 0, 2)) 
-        #     y_hats = bit["y_hat"] 
-        #     fea = x.view(y_hats.size(0), -1)
-        #     bpp_loss, aux_loss = None, None
+        else:
+            self.EB.update(force=True)
+            bit = self.codec.compress(x.permute(1, 0, 2)) 
+            y_hats = bit["y_hat"] 
+            fea = x.view(y_hats.size(0), -1)
+            bpp_loss, aux_loss = None, None
 
-        return x, None, None
+        return fea, bpp_loss, aux_loss
         

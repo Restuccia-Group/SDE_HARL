@@ -1,14 +1,8 @@
 import torch.nn as nn
 import torch
 from harl.utils.models_tools import init, get_active_func, get_init_method
-from harl.models.base.entropy_models import EntropyBottleneck
-from harl.models.base.Entropy_latent import EntropyBottleneckLatentCodec
-from harl.models.base.FactorizedPrior import FactorizedPrior
-from harl.models.base.rate_distortion import RateDistortionLoss
-from harl.models.base.Round import RoundSTE
 
 """MLP modules."""
-
 
 class MLPLayer(nn.Module):
     def __init__(self, input_dim, hidden_sizes, initialization_method, activation_func):
@@ -33,7 +27,8 @@ class MLPLayer(nn.Module):
             active_func,
             nn.LayerNorm(hidden_sizes[0]),
         ]
-
+        
+        #print(len(hidden_sizes)) #2
         for i in range(1, len(hidden_sizes)):
             layers += [
                 init_(nn.Linear(hidden_sizes[i - 1], hidden_sizes[i])),
@@ -66,36 +61,11 @@ class MLPBase(nn.Module):
         self.mlp = MLPLayer(
             obs_dim, self.hidden_sizes, self.initialization_method, self.activation_func
         )
-        self.loss = RateDistortionLoss(lmbda=0.01, metric="mse", return_type="all")
-        self.round = RoundSTE()
-
-        self.EB = EntropyBottleneck(channels=1)
-
-        self.codec = EntropyBottleneckLatentCodec(entropy_bottleneck=self.EB)
-    
 
     def forward(self, x):
+
         if self.use_feature_normalization:
             x = self.feature_norm(x)
-        
-        x = self.mlp(x).unsqueeze(0)
-        #x = self.mlp(x)
-        
-        
-        if self.training:
-            out = self.codec(x) 
-            bpp_loss = self.loss(out, x)["bpp_loss"] 
-                
-            aux_loss = self.EB.loss()
-            fea = self.round(x).squeeze(0)
-    
-        else:
-            self.EB.update(force=True)
-            bit = self.codec.compress(x.permute(1, 0, 2)) 
-            y_hats = bit["y_hat"] 
-            fea = x.view(y_hats.size(0), -1)
-            bpp_loss, aux_loss = None, None
-        x = fea
 
-        return x, bpp_loss, aux_loss
-        
+        x = self.mlp(x)
+        return x
