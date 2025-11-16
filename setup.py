@@ -3,9 +3,9 @@ from setuptools import find_packages, setup
 setup(
     name="harl",
     version="1.0.0",
-    author="PKU-MARL",
-    description="PyTorch implementation of HARL Algorithms",
-    url="https://github.com/PKU-MARL/HARL",
+    author="SDE-HARL Authors",
+    description="PyTorch implementation of SDE-HARL Algorithms",
+    url="https://github.com/Restuccia-Group/SDE_HARL",
     packages=find_packages(),
     license="MIT",
     python_requires=">=3.8",
