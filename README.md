@@ -55,6 +55,7 @@ To enable batch running, we allow users to modify yaml configs in the command li
 python train.py --algo happo --env smac --exp_name test --seed $seed
 
 ```
+Note that our code is modified to run HARL algorithms, not for homogeneous. Currently, HAA2C, HAPPO, and HASAC are working well, and we are updating the rest.
 
 ## Real-world Prototype
 
