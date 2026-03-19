@@ -21,7 +21,10 @@ git clone https://github.com/Restuccia-Group/SDE_HARL.git
 cd SDE_HARL
 pip install -e .
 ```
+To run compression, let's install the compression package: ```shell
+pip install compressai
 
+```
 ### Install Environments
 
 We implement SDE-HARL on [SMAC](https://github.com/oxwhirl/smac), [SMACv2](https://github.com/oxwhirl/smacv2), and, [Google Research Football](https://github.com/google-research/football). However, you can install [MAMuJoCo](https://github.com/schroederdewitt/multiagent_mujoco), [MPE](https://pettingzoo.farama.org/environments/mpe/), [Bi-DexterousHands](https://github.com/PKU-MARL/DexterousHands), and [Light Aircraft Game](https://github.com/liuqh16/CloseAirCombat) to your research purposes. 
