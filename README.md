@@ -21,9 +21,11 @@ git clone https://github.com/Restuccia-Group/SDE_HARL.git
 cd SDE_HARL
 pip install -e .
 ```
-To run compression, let's install the compression package: ```shell
-pip install compressai
 
+
+To run compression, let's install the compression package: 
+```shell
+pip install compressai
 ```
 ### Install Environments
 
