@@ -82,6 +82,10 @@ Please cite this work if you find it useful.
 
 Our work:
 
+```tex
+@article{Gian_Abdi_Bastian_Restuccia_2026, title={SDE-HARL: Scalable Distributed Policy Execution for Heterogeneous-Agent Reinforcement Learning}, volume={40}, url={https://ojs.aaai.org/index.php/AAAI/article/view/39274}, DOI={10.1609/aaai.v40i25.39274}, abstractNote={HARL enables agents to execute cooperative tasks by adopting agent-specific policies. Most of existing HARL methods use individual policy neural networks to ensure monotonic improvement, which leads to substantial computational overhead. The proposed SDE-HARL overcomes this limitation by decomposing each agent’s policy neural network into a lightweight local neural network and a global neural network executed at an edge server. Each local neural network generates and sends a compressed latent representation to the edge server, which aggregates the representations and produces agent-specific inferences. As such, SDE-HARL allows to significantly save computing and networking resources while preserving agent-specific behavior. A key feature of SDE-HARL is grouping agents with similar roles via a role-aware mechanism and share partial parameters in their global networks, while an identity-aware mechanism is introduced to promote behavioral diversity among agents within the same group. We prototyped SDE-HARL on an experimental testbed composed of a Jetson Nano and Raspberry PI to measure latency and network resource consumption. We evaluated SDE-HARL’s performance on several benchmark datasets, including Google Research Football and StarCraft II. Experimental results show that SDE-HARL reaches up to 90% win rate while reducing latency, energy consumption, and networking overhead respectively by 2x, 2.5x, and 5x compared to existing work.}, number={25}, journal={Proceedings of the AAAI Conference on Artificial Intelligence}, author={Gian, Toan D. and Abdi, Mohammad and Bastian, Nathaniel D. and Restuccia, Francesco}, year={2026}, month={Mar.}, pages={21287-21295} }
+```
+
 For any work related to the variable bitrate models, please cite
 
 ```tex
